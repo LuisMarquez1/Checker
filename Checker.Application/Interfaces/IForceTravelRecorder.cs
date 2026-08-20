@@ -1,0 +1,17 @@
+﻿using Checker.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Checker.Application.Interfaces
+{
+    public interface IForceTravelRecorder
+    {
+        void Start();
+        void Record(AcquisitionSnapshot snapshot);
+        ForceTravelCurve Stop();
+        ForceTravelCurve CurrentCure { get; }
+    }
+}

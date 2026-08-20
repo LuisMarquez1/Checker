@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Drivers\Beckhoff\" />
+    <Folder Include="Drivers\LabJack\" />
+    <Folder Include="Drivers\MCC\" />
+    <Folder Include="Drivers\EtherCAT\" />
+    <Folder Include="Native\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Checker.Application\Checker.Application.csproj" />
+    <ProjectReference Include="..\Checker.Domain\Checker.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.0" />
+    <PackageReference Include="System.IO.Ports" Version="10.0.11" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Include="Native\inpoutx64.dll">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>
